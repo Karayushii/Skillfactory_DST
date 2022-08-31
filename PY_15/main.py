@@ -123,12 +123,13 @@
 #     print('prg exit')
 
 
-class Square():
-    def __init__(self,side) -> None:
-        if side<0:
-            raise self.NonPositiveDigitException("Xbckj")
-
 class NonPositiveDigitException(ValueError):
         def __init__(self, *args: object) -> None:
             super().__init__(*args) 
+            
+class Square(NonPositiveDigitException):
+    def __init__(self,side) -> None:
+        if side<0:
+            raise NonPositiveDigitException("Xbckj")
+
 a = Square(-1)
