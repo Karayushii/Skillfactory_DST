@@ -1,3 +1,0 @@
-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
-
-git remote set-url origin https://Karayushii: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@github.com/Karayushii/Skillfactory_DST.git
