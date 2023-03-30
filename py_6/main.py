@@ -91,6 +91,7 @@
 
 
 def find_median(input_string):
+    # Преобразую строку в список
     input_string = input_string.split(', ')
     if input_string:
         try:
@@ -103,15 +104,26 @@ def find_median(input_string):
             for m in range(len(input_string)):
                 if input_string[n]>input_string[m]:
                     input_string[n],input_string[m] = input_string[m],input_string[n]
-        if len(in)
+        # return input_string
 
+        if len(input_string)%2==0:
+            l = int(len(input_string)/2)
+            l = (input_string[l]+input_string[l-1])/2
+            return 'Median: {}'.format(l)
+        else:
+            l = int((len(input_string)-1)/2)
+            return 'Median: {}'.format(input_string[l])
+            
     else:
         return 'Некорректный ввод'
-
-
+# i = [1, 5, 2, 3, 6]
+# n = int((len(i)-1)/2)
+# print(i[n])
+# j = [1, 5, 2, 3, 6, 7,8,9]
+# print(j[len(j)])
 
 # input_string = input('Введите последовательность чисел: ')
-print(find_median())
+print(find_median(input_string='1, 5, 2, 3, 6'))
 # Ввод:
 # 1, 5, 2, 3, 6
 
@@ -119,6 +131,7 @@ print(find_median())
 # Median: 3.0
 # ```
 # ```
+print(find_median(input_string='100, 5, 2, 4, 3, 6'))
 # Ввод:
 # 100, 5, 2, 4, 3, 6
 
@@ -127,12 +140,14 @@ print(find_median())
 # ```
 # ```
 # Ввод:
+print(find_median(input_string=''))
 
 # Вывод:
 # Некорректный ввод
 # ```
 # ```
 # Ввод:
+print(find_median(input_string='десять, 10, пять, 7, семь'))
 # десять, 10, пять, 7, семь
 
 # Вывод:
